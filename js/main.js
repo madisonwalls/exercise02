@@ -34,7 +34,43 @@ var images = {
 };
 
 var apple = document.querySelector('.Fruit--apple');
-apple.addEventListener('click', function() {
+var orange = document.querySelector('.Fruit--orange');
+var banana = document.querySelector('.Fruit--banana');
+
+apple.addEventListener('click', function fruitImage () {
   console.log('Apple clicked.');
+  document.getElementById("fruit").innerHTML = '<img src=' + images.fruits.apple + '>';
+  // update image in fruit holder
+});
+
+orange.addEventListener('click', function fruitImage (){
+  console.log('Orange Clicked.');
+  document.getElementById("fruit").innerHTML = '<img src=' + images.fruits.orange + '>';
+});
+
+banana.addEventListener('click', function fruitImage (){
+  console.log('Banana Clicked.');
+  document.getElementById("fruit").innerHTML = '<img src=' + images.fruits.banana + '>';
+});
+
+var iceCream = document.querySelector('.Dessert--icecream');
+var cake = document.querySelector('.Dessert--cake');
+var pie = document.querySelector('.Dessert--pie');
+
+iceCream.addEventListener('click', function dessertImage () {
+  console.log('Ice Cream clicked.');
+  document.getElementById("dessert").innerHTML = '<img src=' + images.desserts.icecream + '>';
+  // update image in fruit holder
+});
+
+cake.addEventListener('click', function dessertImage () {
+  console.log('Cake clicked.');
+  document.getElementById("dessert").innerHTML = '<img src=' + images.desserts.cake + '>';
+  // update image in fruit holder
+});
+
+ pie.addEventListener('click', function dessertImage () {
+  console.log('Pie clicked.');
+  document.getElementById("dessert").innerHTML = '<img src=' + images.desserts.pie + '>';
   // update image in fruit holder
 });
