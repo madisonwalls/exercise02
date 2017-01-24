@@ -62,7 +62,7 @@
   cursor: pointer;
 }
 
-.Reset {
+.Reset , .Create {
   padding: 8px 12px;
   margin: 20px auto;
   border: 1px solid #ccc;
@@ -70,7 +70,7 @@
   display: inline-block;
 }
 
-.Reset:hover {
+.Reset:hover , .Create:hover {
   background: #dedede;
   cursor: pointer;
 }
