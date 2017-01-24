@@ -10,23 +10,23 @@
     <div class="container">
 
       <h1>Make Your Dessert</h1>
-      <p>Here are instructions for how to use this application. You should update this paragraph and include stuff like this in your projects.</p>
+      <p>This application lets you whip up some dessert! Select a fruit ingredient, and then select a dessert ingredient to see what kind of dessert you've created! Reset the application by hitting the "Reset" button at the bottom of the page.</p>
 
       <div class="Holders">
 
-        <div id="fruit" class="Holder Holder--fruit">
+        <div class="Holder Holder--fruit">
 
         </div>
 
         <div class="separator">+</div>
 
-        <div id="dessert" class="Holder Holder--dessert">
+        <div class="Holder Holder--dessert">
 
         </div>
 
         <div class="separator">=</div>
 
-        <div id="final" class="Holder Holder--result">
+        <div class="Holder Holder--result">
         </div>
 
       </div>
@@ -67,9 +67,6 @@
 
       </div>
 
-<div class="Create">
-  Create
-</div>
 
       <div class="Reset">
         Reset
@@ -77,6 +74,19 @@
 
     </div>
 
-    <script src="js/main.js" charset="utf-8"></script>
+    <script src="js/main.js" charset="utf-8">
+
+
+    var reset = document.querySelector(".Reset");
+        reset.addEventListener('click', function () {
+        resetPage ();
+        });
+
+        function resetPage () {
+          location.reload();
+        }
+
+
+    </script>
   </body>
 </html>

@@ -36,71 +36,83 @@ var images = {
 var apple = document.querySelector('.Fruit--apple');
 var orange = document.querySelector('.Fruit--orange');
 var banana = document.querySelector('.Fruit--banana');
-var fruit = document.getElementById("fruit");
-
-
- apple.addEventListener('click', function fruitImage () {
-   console.log('Apple clicked.');
-   fruit.innerHTML = '<img src=' + images.fruits.apple + '>';
-   // update image in fruit holder
-});
-
- orange.addEventListener('click', function fruitImage (){
-  console.log('Orange Clicked.');
-  fruit.innerHTML = '<img src=' + images.fruits.orange + '>';
-
-});
-
-banana.addEventListener('click', function fruitImage (){
-  console.log('Banana Clicked.');
-  fruit.innerHTML = '<img src=' + images.fruits.banana + '>';
-
-});
-
-
-
-
-
 var iceCream = document.querySelector('.Dessert--icecream');
 var cake = document.querySelector('.Dessert--cake');
 var pie = document.querySelector('.Dessert--pie');
 
-iceCream.addEventListener('click', function dessertImage () {
-  console.log('Ice Cream clicked.');
-  document.getElementById("dessert").innerHTML = '<img src=' + images.desserts.icecream + '>';
-  var currentDessert = "icecream";
-  console.log(currentDessert);
-  document.getElementById("final").innerHTML = '<img src=' + images.mixes[currentFruit][currentDessert] + '>';
+var dessert = document.querySelector(".Holder--dessert");
+var fruit = document.querySelector(".Holder--fruit");
+var final = document.querySelector(".Holder--result");
+
+
+
+
+apple.addEventListener('click', function() {
+  currentFruit = "apple";
+  setFruit ();
+  getResult ();
 
 });
 
-cake.addEventListener('click', function dessertImage () {
-  console.log('Cake clicked.');
-  document.getElementById("dessert").innerHTML = '<img src=' + images.desserts.cake  + '>';
-  var currentDessert = "cake";
-  document.getElementById("final").innerHTML = '<img src=' + images.mixes[currentFruit][currentDessert] + '>';
-  // update image in fruit holder
+ orange.addEventListener('click', function(){
+   currentFruit = "orange";
+   setFruit ();
+   getResult ();
+
 });
 
-
-
- pie.addEventListener('click', function dessertImage () {
-  console.log('Pie clicked.');
-  document.getElementById("dessert").innerHTML = '<img src=' + images.desserts.pie + '>';
-  var currentDessert = "pie";
-  document.getElementById("final").innerHTML = '<img src=' + images.mixes[currentFruit][currentDessert] + '>';
-
-  // update image in fruit holder
-
+banana.addEventListener('click', function(){
+  currentFruit = "banana";
+  setFruit ();
+  getResult ();
 });
 
 
 
 
-var Results = document.querySelector('.Create');
+iceCream.addEventListener('click', function () {
+  currentDessert = "icecream";
+  setDessert ();
+  getResult ();
 
-  Results.addEventListener('click', function finalImage () {
-   console.log('Results clicked.');
-   console.log(currentFruit);
-   document.getElementById("final").innerHTML = '<img src=' + images.mixes[currentFruit][currentDessert] + '>';
+
 });
+
+cake.addEventListener('click', function () {
+
+  currentDessert = "cake";
+  setDessert ();
+  getResult ();
+
+});
+
+ pie.addEventListener('click', function () {
+
+   currentDessert = "pie";
+   setDessert ();
+   getResult ();
+});
+
+
+function setFruit () {
+
+fruit.innerHTML = '<img src=' + images.fruits[currentFruit] + '>';
+console.log(currentFruit);
+};
+
+function setDessert () {
+
+dessert.innerHTML = '<img src=' + images.desserts[currentDessert] + '>';
+
+};
+
+function getResult () {
+
+  if (currentFruit == null || currentDessert == null) {
+    final.innerHTML = '<p>Please select another ingredient.</p>';
+  }else{
+    final.innerHTML = '<img src=' + images.mixes[currentFruit][currentDessert] + '>';
+    console.log(currentFruit);
+};
+
+};
